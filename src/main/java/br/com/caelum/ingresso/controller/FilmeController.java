@@ -1,11 +1,10 @@
 package br.com.caelum.ingresso.controller;
 
 import br.com.caelum.ingresso.dao.FilmeDao;
-import br.com.caelum.ingresso.modelo.Filme;
+import br.com.caelum.ingresso.model.Filme;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;

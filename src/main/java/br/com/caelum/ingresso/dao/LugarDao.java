@@ -1,6 +1,6 @@
 package br.com.caelum.ingresso.dao;
 
-import br.com.caelum.ingresso.modelo.Lugar;
+import br.com.caelum.ingresso.model.Lugar;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

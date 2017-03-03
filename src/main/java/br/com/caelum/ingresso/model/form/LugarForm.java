@@ -1,7 +1,6 @@
-package br.com.caelum.ingresso.form;
+package br.com.caelum.ingresso.model.form;
 
-import br.com.caelum.ingresso.modelo.Lugar;
-import br.com.caelum.ingresso.modelo.Sala;
+import br.com.caelum.ingresso.model.Lugar;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;

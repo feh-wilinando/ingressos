@@ -1,6 +1,6 @@
 package br.com.caelum.ingresso.dao;
 
-import br.com.caelum.ingresso.modelo.Filme;
+import br.com.caelum.ingresso.model.Filme;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
