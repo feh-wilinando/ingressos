@@ -1,4 +1,4 @@
-package br.com.caelum.ingresso.model.form;
+package br.com.caelum.ingresso.model;
 
 import br.com.caelum.ingresso.model.Lugar;
 import org.hibernate.validator.constraints.NotBlank;

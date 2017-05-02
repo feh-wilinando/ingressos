@@ -1,4 +1,4 @@
-package br.com.caelum.ingresso.model.form;
+package br.com.caelum.ingresso.model;
 
 import br.com.caelum.ingresso.dao.FilmeDao;
 import br.com.caelum.ingresso.dao.SalaDao;

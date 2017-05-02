@@ -2,7 +2,7 @@ package br.com.caelum.ingresso.controller;
 
 import br.com.caelum.ingresso.dao.LugarDao;
 import br.com.caelum.ingresso.dao.SalaDao;
-import br.com.caelum.ingresso.model.form.LugarForm;
+import br.com.caelum.ingresso.model.LugarForm;
 import br.com.caelum.ingresso.model.Lugar;
 import br.com.caelum.ingresso.model.Sala;
 import org.springframework.beans.factory.annotation.Autowired;

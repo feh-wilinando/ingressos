@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
@@ -24,6 +25,10 @@ public class Sessao {
     @ManyToOne
     private Filme filme;
 
+    private BigDecimal preco;
+
+
+
 
     /**
      * @deprecated hibernate only
@@ -35,6 +40,7 @@ public class Sessao {
         this.horario = horario;
         this.setFilme(filme);
         this.sala = sala;
+        this.preco = sala.getPreco().add(filme.getPreco());
     }
 
     public Sala getSala() {
@@ -71,5 +77,9 @@ public class Sessao {
 
     public LocalTime getHorarioTermino() {
         return this.horario.plus(filme.getDuracao().toMinutes(), ChronoUnit.MINUTES);
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
     }
 }
