@@ -28,8 +28,6 @@ public class Sessao {
     private BigDecimal preco;
 
 
-
-
     /**
      * @deprecated hibernate only
      */
