@@ -17,7 +17,7 @@ public class ImdbClient {
 
     private Logger logger = Logger.getLogger(ImdbClient.class);
 
-    public Optional<DetalhesDoFilme> request(Filme filme) {
+    public <T> Optional<T> request(Filme filme, Class<T> clazz) {
 
         RestTemplate client = new RestTemplate();
 
@@ -26,8 +26,7 @@ public class ImdbClient {
         String url = String.format("http://www.omdbapi.com/?t=%s&y=&plot=short&r=json", titulo);
 
         try {
-            DetalhesDoFilme detalhesDoFilme = client.getForObject(url, DetalhesDoFilme.class);
-            return Optional.of(detalhesDoFilme);
+            return Optional.of(client.getForObject(url, clazz));
         } catch (RestClientException e) {
             logger.error(e.getMessage(), e);
             return Optional.empty();
