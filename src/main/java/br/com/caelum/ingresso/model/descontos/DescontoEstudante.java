@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  */
 public class DescontoEstudante implements Desconto {
 
-    private java.math.BigDecimal metade = new BigDecimal(2.0);
+    private BigDecimal metade = new BigDecimal(2.0);
 
     @Override
     public BigDecimal aplicarDescontoSobre(BigDecimal precoOriginal) {
