@@ -1,12 +1,13 @@
 package br.com.caelum.ingresso.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by nando on 03/03/17.
@@ -28,6 +29,10 @@ public class Sessao {
     private BigDecimal preco;
 
 
+    @OneToMany(mappedBy = "sessao", fetch = FetchType.EAGER)
+    private Set<Ingresso> ingressos = new HashSet<>();
+
+
     /**
      * @deprecated hibernate only
      */
@@ -39,6 +44,14 @@ public class Sessao {
         this.setFilme(filme);
         this.sala = sala;
         this.preco = sala.getPreco().add(filme.getPreco());
+    }
+
+    public Map<String, List<Lugar>> getMapaDeLugares() {
+        return sala.getMapaDeLugares();
+    }
+
+    public boolean isDisponivel(Lugar lugar) {
+        return ingressos.stream().map(Ingresso::getLugar).noneMatch(l -> l.equals(lugar));
     }
 
     public Sala getSala() {
@@ -79,5 +92,9 @@ public class Sessao {
 
     public BigDecimal getPreco() {
         return preco;
+    }
+
+    public void setIngressos(Set<Ingresso> ingressos) {
+        this.ingressos = ingressos;
     }
 }
