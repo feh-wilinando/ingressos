@@ -19,6 +19,9 @@ public class Carrinho {
         ingressos.add(ingresso);
     }
 
+    public boolean isSelecionado(Lugar lugar) {
+        return ingressos.stream().map(Ingresso::getLugar).anyMatch(l -> l.equals(lugar));
+    }
 
     public List<Ingresso> getIngressos() {
         return ingressos;
