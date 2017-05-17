@@ -36,4 +36,8 @@ public class Carrinho {
         Ingresso ingresso = ingressos.get(id);
         ingressos.remove(ingresso);
     }
+
+    public Compra toCompra(){
+        return  new Compra(ingressos);
+    }
 }
