@@ -77,4 +77,16 @@ public class Ingresso {
     public void setTipoDeIngresso(TipoDeIngresso tipoDeIngresso) {
         this.tipoDeIngresso = tipoDeIngresso;
     }
+
+
+    public BigDecimal getPrecoComDesconto() {
+        return tipoDeIngresso.aplicaDesconto(preco);
+    }
+
+    public BigDecimal getValorDeDesconto() {
+
+        BigDecimal desconto = getPrecoComDesconto();
+
+        return preco.subtract(desconto);
+    }
 }

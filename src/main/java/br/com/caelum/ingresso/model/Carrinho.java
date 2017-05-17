@@ -3,6 +3,7 @@ package br.com.caelum.ingresso.model;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,5 +26,14 @@ public class Carrinho {
 
     public List<Ingresso> getIngressos() {
         return ingressos;
+    }
+
+    public BigDecimal getTotal(){
+        return ingressos.stream().map(Ingresso::getPrecoComDesconto).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+    }
+
+    public void remove(Integer id) {
+        Ingresso ingresso = ingressos.get(id);
+        ingressos.remove(ingresso);
     }
 }
