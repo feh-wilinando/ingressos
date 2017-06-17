@@ -37,10 +37,10 @@
     </bean>
 
     <bean id="mysqlDS" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="username" value="root"/>
-        <property name="password" value=""/>
-        <property name="url" value="jdbc:mysql://localhost/ingresso?createDatabaseIfNotExist=true"/>
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="username" value="ednyyuamecwlsp"/>
+        <property name="password" value="dd420dfe4e68556e5a8345db4c15bc22849ce983854d81ebc4ab8adc37b78353"/>
+        <property name="url" value="jdbc:postgres://ec2-54-225-182-108.compute-1.amazonaws.com/d8t4odouve0m1f"/>
+        <property name="driverClassName" value="org.postgresql.Driver"/>
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
