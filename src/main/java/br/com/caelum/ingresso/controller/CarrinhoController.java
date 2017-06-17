@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * Created by nando on 11/05/17.
- */
+
 @Controller
 public class CarrinhoController {
 

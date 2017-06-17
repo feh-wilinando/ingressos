@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by nando on 11/05/17.
- */
+
 public class CarrinhoForm {
+
     private List<Ingresso> ingressos = new ArrayList<>();
 
     public List<Ingresso> getIngressos() {
@@ -22,15 +21,14 @@ public class CarrinhoForm {
     }
 
 
-    public List<Ingresso> toIngressos(SessaoDao sessaoDao, LugarDao lugarDao){
+    public List<Ingresso> toIngressos(SessaoDao sessaoDao, LugarDao lugarDao) {
 
         return this.ingressos.stream().map(ingresso -> {
             Sessao sessao = sessaoDao.findOne(ingresso.getSessao().getId());
-            Lugar lugar  = lugarDao.findOne(ingresso.getLugar().getId());
+            Lugar lugar = lugarDao.findOne(ingresso.getLugar().getId());
             TipoDeIngresso tipoDeIngresso = ingresso.getTipoDeIngresso();
             return new Ingresso(sessao, tipoDeIngresso, lugar);
         }).collect(Collectors.toList());
-
     }
 
 }

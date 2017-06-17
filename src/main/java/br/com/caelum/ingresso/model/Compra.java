@@ -4,9 +4,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by nando on 11/05/17.
- */
 @Entity
 public class Compra {
 
@@ -43,3 +40,4 @@ public class Compra {
         this.ingressos = ingressos;
     }
 }
+

@@ -2,9 +2,7 @@ package br.com.caelum.ingresso.model;
 
 import java.time.YearMonth;
 
-/**
- * Created by nando on 11/05/17.
- */
+
 public class Cartao {
 
     private String numero;

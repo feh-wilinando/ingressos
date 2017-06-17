@@ -16,9 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
-/**
- * Created by nando on 11/05/17.
- */
+
 @Controller
 public class CompraController {
 
@@ -28,6 +26,7 @@ public class CompraController {
     private LugarDao lugarDao;
 
     @Autowired
+
     private Carrinho carrinho;
 
     @Autowired
@@ -44,7 +43,7 @@ public class CompraController {
     }
 
     @PostMapping("/compra/ingressos")
-    public ModelAndView enviarParaPagamento(CarrinhoForm carrinhoForm){
+    public ModelAndView enviarParaPagamento(CarrinhoForm carrinhoForm) {
         ModelAndView modelAndView = new ModelAndView("redirect:/compra");
 
         carrinhoForm.toIngressos(sessaoDao, lugarDao).forEach(carrinho::add);

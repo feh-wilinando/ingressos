@@ -7,14 +7,12 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by nando on 11/05/17.
- */
 @Component
 @SessionScope
 public class Carrinho {
 
     private List<Ingresso> ingressos = new ArrayList<>();
+
 
     public void add(Ingresso ingresso){
         ingressos.add(ingresso);

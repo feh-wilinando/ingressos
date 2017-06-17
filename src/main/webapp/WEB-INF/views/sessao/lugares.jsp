@@ -13,8 +13,9 @@
 
 <ingresso:template>
 	<jsp:attribute name="compra_css">
-		<link rel="stylesheet" href="/assets/css/compra.css" />
+		<link rel="stylesheet" href="/assets/css/compra.css"/>
     </jsp:attribute>
+
 	<jsp:body>
 		<div class="container-compra">
 
@@ -40,8 +41,9 @@
 											<td class="fileira-assento"><figure>
 												<svg class="assento ${sessao.isDisponivel(lugar) && !carrinho.isSelecionado(lugar) ? "disponivel" : "ocupado" }" onclick="${sessao.isDisponivel(lugar) && !carrinho.isSelecionado(lugar) ? 'changeCheckbox(this)' : '' }" id="${lugar.id}" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													 viewBox="0 0 318.224 305.246" enable-background="new 0 0 318.224 305.246" xml:space="preserve">
+
 											<g id="FILL">
-												<path d="M269.395,132.246h-15.02V51.414c0-11.758-9.492-21.248-21.248-21.248H85.097
+                                                <path d="M269.395,132.246h-15.02V51.414c0-11.758-9.492-21.248-21.248-21.248H85.097
 													c-11.757,0-21.248,9.49-21.248,21.248v80.833H48.827c-8.535,0-15.127,7.505-14.024,15.971l11.406,87.625
 													c0.462,3.538,3.476,6.187,7.045,6.187h17.958l4.629,21.843c1.385,6.536,7.155,11.209,13.833,11.209h138.845
 													c6.68,0,12.448-4.672,13.833-11.209l4.648-21.933l0.009,0.09h17.959c3.569,0,6.585-2.649,7.045-6.187l11.407-87.625
@@ -119,6 +121,7 @@
 			</div>
 		</div>
 
+
 		<script>
 
             function changeCheckbox(img) {
@@ -133,14 +136,14 @@
                 console.log(linhaId);
 
                 var tbody = document.querySelector("#tabela-ingressos>tbody");
-                if (!checkbox.checked){
+                if (!checkbox.checked) {
 
                     var index = tbody.rows.length;
 
-                    var inputSessaoId = makeInputHiddenBy('ingressos['+index+'].sessao.id', sessaoId);
-                    var inputLugarId = makeInputHiddenBy('ingressos['+index+'].lugar.id', checkbox.value);
+                    var inputSessaoId = makeInputHiddenBy('ingressos[' + index + '].sessao.id', sessaoId);
+                    var inputLugarId = makeInputHiddenBy('ingressos[' + index + '].lugar.id', checkbox.value);
 
-                    var row =  tbody.insertRow(index);
+                    var row = tbody.insertRow(index);
                     row.setAttribute('id', linhaId);
 
                     var cellSala = row.insertCell(0);
@@ -161,7 +164,7 @@
 
                     var cellTipo = row.insertCell(4);
                     var selectTipo = document.createElement('select');
-                    selectTipo.setAttribute('name', 'ingressos['+index+'].tipoDeIngresso');
+                    selectTipo.setAttribute('name', 'ingressos[' + index + '].tipoDeIngresso');
                     selectTipo.setAttribute('class', 'form-control input-sm');
 
                     <c:forEach items="${tiposDeIngressos}" var="tipo" varStatus="status">
@@ -182,8 +185,10 @@
                     checkbox.checked = true;
                     img.classList.add("escolhido");
                     img.classList.remove("disponivel");
+
                 }else{
                     var row  = document.querySelector("#"+linhaId);
+
 
                     checkbox.checked = false;
                     img.classList.remove("escolhido");
