@@ -27,6 +27,20 @@ public class Ingresso {
     @Enumerated(EnumType.STRING)
     private TipoDeIngresso tipoDeIngresso;
 
+    public Ingresso() {
+    }
+
+    public BigDecimal getPrecoComDesconto(){
+        return tipoDeIngresso.aplicaDesconto(preco);
+    }
+
+    public BigDecimal getValorDeDesconto(){
+
+        BigDecimal desconto = getPrecoComDesconto();
+
+        return preco.subtract(desconto);
+    }
+
     public Ingresso(Sessao sessao, TipoDeIngresso tipoDeIngresso, Lugar lugar) {
         this.sessao = sessao;
         this.lugar = lugar;

@@ -95,4 +95,13 @@ public class Lugar {
         return true;
     }
 
+
+    @Override
+    public String toString() {
+        return "Lugar{" +
+                "id=" + id +
+                ", fileira='" + fileira + '\'' +
+                ", posicao=" + posicao +
+                '}';
+    }
 }
